@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>output: html_document</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{Using Outlier Detection Algorithms to Analyze NBA Players}
+-->
+
+<hr/>
+
+<p>title: &ldquo;Using Outlier Detection Algorithms to Analyze NBA Players&rdquo;
+author: &ldquo;Cheng Fan&rdquo;
+date: &ldquo;April 1, 2015&rdquo;</p>
+
+<h2>output: html_document</h2>
+
+<p>#Section 1: Overview</p>
+
+<p>This is a short tutorial on using outlier detection algorithms to analyze NBA players. The data to be used is called GoldenStatesWarriors, which has been included in the package. The data contains the statistics of all players in the Golden States Warriors during the 2013-2014 season. In total, 18 players are included. The data contains 27 variables, which specifies the following attributes, player names (Name), age (Age), games played (G), games started (GS), minutes played (MP), field goal made (FG), field goal attemps (FGA), field goal percentage (FGP), 3-pointers made (3P), 3-pointer attemps (3PA), 3-pointer percentage (3PP), 2-pointers made (2P), 2-pointer attemps (2PA), 2-pointer percentages (2PP), effective field goal percentage (eFGP), free throws made (FT), free throw attemps (FTA), free throw percentage (FTP), offensive rebounds (ORB), defensive rebounds (DRB), total rebounds (TRB), assists (AST), steals (STL), blocks (BLK), turnovers (TOV), personal fouls (PF), and total points (PTS).  </p>
+
+<p>The summary of the data are shown as below:</p>
+
+<pre><code>##      Name                Age              G               GS       
+##  Length:18          Min.   :21.00   Min.   : 4.00   Min.   : 0.00  
+##  Class :character   1st Qu.:23.25   1st Qu.:24.00   1st Qu.: 0.00  
+##  Mode  :character   Median :25.00   Median :44.00   Median : 2.00  
+##                     Mean   :26.33   Mean   :47.22   Mean   :22.78  
+##                     3rd Qu.:29.00   3rd Qu.:75.75   3rd Qu.:53.25  
+##                     Max.   :35.00   Max.   :82.00   Max.   :81.00  
+##                                                                    
+##        MP               FG              FGA               FGP        
+##  Min.   :   6.0   Min.   :  0.00   Min.   :   1.00   Min.   :0.0000  
+##  1st Qu.: 172.8   1st Qu.: 14.75   1st Qu.:  50.75   1st Qu.:0.3775  
+##  Median : 772.0   Median :132.00   Median : 290.50   Median :0.4120  
+##  Mean   :1101.7   Mean   :179.78   Mean   : 389.17   Mean   :0.4044  
+##  3rd Qu.:1979.2   3rd Qu.:231.25   3rd Qu.: 458.75   3rd Qu.:0.4733  
+##  Max.   :2868.0   Max.   :652.00   Max.   :1383.00   Max.   :0.6270  
+##                                                                      
+##        3P              3PA              3PP               2P       
+##  Min.   :  0.00   Min.   :  0.00   Min.   :0.0000   Min.   :  0.0  
+##  1st Qu.:  0.00   1st Qu.:  0.25   1st Qu.:0.2560   1st Qu.: 10.0  
+##  Median :  9.00   Median : 35.00   Median :0.3220   Median :112.0  
+##  Mean   : 43.00   Mean   :113.17   Mean   :0.2718   Mean   :136.8  
+##  3rd Qu.: 51.25   3rd Qu.:155.75   3rd Qu.:0.3470   3rd Qu.:200.5  
+##  Max.   :261.00   Max.   :615.00   Max.   :0.4240   Max.   :513.0  
+##                                    NA&#39;s   :5                       
+##       2PA             2PP              eFGP              FT        
+##  Min.   :  1.0   Min.   :0.0000   Min.   :0.0000   Min.   :  1.00  
+##  1st Qu.: 22.5   1st Qu.:0.4412   1st Qu.:0.4293   1st Qu.:  5.50  
+##  Median :226.5   Median :0.4595   Median :0.4755   Median : 29.00  
+##  Mean   :276.0   Mean   :0.4395   Mean   :0.4458   Mean   : 72.39  
+##  3rd Qu.:402.0   3rd Qu.:0.4988   3rd Qu.:0.5182   3rd Qu.:107.25  
+##  Max.   :980.0   Max.   :0.6270   Max.   :0.6270   Max.   :308.00  
+##                                                                    
+##       FTA              FTP              ORB              DRB       
+##  Min.   :  2.00   Min.   :0.3440   Min.   :  0.00   Min.   :  0.0  
+##  1st Qu.:  8.75   1st Qu.:0.5523   1st Qu.:  5.00   1st Qu.: 23.5  
+##  Median : 53.50   Median :0.6925   Median : 28.50   Median :105.0  
+##  Mean   : 96.17   Mean   :0.6692   Mean   : 49.78   Mean   :156.6  
+##  3rd Qu.:133.50   3rd Qu.:0.7913   3rd Qu.: 80.25   3rd Qu.:243.8  
+##  Max.   :348.00   Max.   :0.8850   Max.   :182.00   Max.   :489.0  
+##                                                                    
+##       TRB             AST             STL              BLK        
+##  Min.   :  0.0   Min.   :  0.0   Min.   :  0.00   Min.   :  0.00  
+##  1st Qu.: 29.5   1st Qu.: 14.5   1st Qu.:  4.50   1st Qu.:  2.50  
+##  Median :152.5   Median : 44.5   Median : 13.50   Median : 10.00  
+##  Mean   :206.4   Mean   :106.2   Mean   : 35.67   Mean   : 22.61  
+##  3rd Qu.:306.5   3rd Qu.:139.2   3rd Qu.: 60.75   3rd Qu.: 32.00  
+##  Max.   :671.0   Max.   :666.0   Max.   :128.00   Max.   :121.00  
+##                                                                   
+##       TOV               PF              PTS        
+##  Min.   :  0.00   Min.   :  0.00   Min.   :   1.0  
+##  1st Qu.: 13.75   1st Qu.: 21.25   1st Qu.:  41.5  
+##  Median : 51.00   Median : 73.00   Median : 351.5  
+##  Mean   : 68.06   Mean   : 99.11   Mean   : 474.9  
+##  3rd Qu.: 95.50   3rd Qu.:185.00   3rd Qu.: 568.8  
+##  Max.   :294.00   Max.   :234.00   Max.   :1873.0  
+## 
+</code></pre>
+
+<p>#Section 2: Data preprocessing</p>
+
+<p>It is obvious that the variables in the data have different scales. Prior to the implementation of outlier detection algorithms, it is important to normalize the raw data. A Z-normalization is used for data preprocessing (except for the first column, which is the player name). One thing to note is that the raw data contains NAs. This is because for certain players, they did not make any attemps on 3-pointers and therefore, the resulting 3-pointer percentage is NA. Once the data is scaled, these missing values are filled as 0. </p>
+
+<pre><code class="r">library(plyr)
+data.scale &lt;- t(aaply(.data = as.matrix(GoldenStatesWarriors[,-1]), .margins = 2, .fun = function(x) (x-mean(x, na.rm = T))/sd(x, na.rm = T)))
+summary(data.scale)
+</code></pre>
+
+<pre><code>##       Age                G                 GS                MP         
+##  Min.   :-1.3690   Min.   :-1.5584   Min.   :-0.7171   Min.   :-1.0701  
+##  1st Qu.:-0.7915   1st Qu.:-0.8373   1st Qu.:-0.7171   1st Qu.:-0.9073  
+##  Median :-0.3423   Median :-0.1162   Median :-0.6541   Median :-0.3220  
+##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.6845   3rd Qu.: 1.0286   3rd Qu.: 0.9593   3rd Qu.: 0.8571  
+##  Max.   : 2.2247   Max.   : 1.2539   Max.   : 1.8329   Max.   : 1.7251  
+##                                                                         
+##        FG               FGA               FGP                3P         
+##  Min.   :-0.8806   Min.   :-0.9007   Min.   :-3.0511   Min.   :-0.5645  
+##  1st Qu.:-0.8084   1st Qu.:-0.7853   1st Qu.:-0.2033   1st Qu.:-0.5645  
+##  Median :-0.2340   Median :-0.2289   Median : 0.0570   Median :-0.4463  
+##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.2521   3rd Qu.: 0.1615   3rd Qu.: 0.5191   3rd Qu.: 0.1083  
+##  Max.   : 2.3131   Max.   : 2.3061   Max.   : 1.6789   Max.   : 2.8617  
+##                                                                         
+##       3PA               3PP                2P               2PA         
+##  Min.   :-0.6253   Min.   :-1.9685   Min.   :-0.8990   Min.   :-0.9170  
+##  1st Qu.:-0.6239   1st Qu.:-0.1142   1st Qu.:-0.8332   1st Qu.:-0.8453  
+##  Median :-0.4319   Median : 0.3638   Median :-0.1628   Median :-0.1651  
+##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.2353   3rd Qu.: 0.5449   3rd Qu.: 0.4188   3rd Qu.: 0.4202  
+##  Max.   : 2.7729   Max.   : 1.1026   Max.   : 2.4727   Max.   : 2.3476  
+##                    NA&#39;s   :5                                            
+##       2PP                eFGP               FT               FTA         
+##  Min.   :-3.26327   Min.   :-3.2123   Min.   :-0.8140   Min.   :-0.9027  
+##  1st Qu.: 0.01299   1st Qu.:-0.1195   1st Qu.:-0.7627   1st Qu.:-0.8380  
+##  Median : 0.14850   Median : 0.2138   Median :-0.4947   Median :-0.4090  
+##  Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.43993   3rd Qu.: 0.5218   3rd Qu.: 0.3975   3rd Qu.: 0.3579  
+##  Max.   : 1.39218   Max.   : 1.3053   Max.   : 2.6865   Max.   : 2.4141  
+##                                                                          
+##       FTP               ORB               DRB               TRB         
+##  Min.   :-2.0177   Min.   :-0.8535   Min.   :-0.9869   Min.   :-0.9664  
+##  1st Qu.:-0.7255   1st Qu.:-0.7677   1st Qu.:-0.8388   1st Qu.:-0.8283  
+##  Median : 0.1448   Median :-0.3648   Median :-0.3252   Median :-0.2523  
+##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.7575   3rd Qu.: 0.5225   3rd Qu.: 0.5491   3rd Qu.: 0.4688  
+##  Max.   : 1.3393   Max.   : 2.2670   Max.   : 2.0945   Max.   : 2.1756  
+##                                                                         
+##       AST               STL               BLK               TOV         
+##  Min.   :-0.6684   Min.   :-0.8757   Min.   :-0.7267   Min.   :-0.9301  
+##  1st Qu.:-0.5771   1st Qu.:-0.7652   1st Qu.:-0.6464   1st Qu.:-0.7422  
+##  Median :-0.3884   Median :-0.5443   Median :-0.4053   Median :-0.2331  
+##  Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.2078   3rd Qu.: 0.6159   3rd Qu.: 0.3018   3rd Qu.: 0.3751  
+##  Max.   : 3.5223   Max.   : 2.2670   Max.   : 3.1623   Max.   : 3.0880  
+##                                                                         
+##        PF               PTS         
+##  Min.   :-1.1330   Min.   :-0.8590  
+##  1st Qu.:-0.8901   1st Qu.:-0.7856  
+##  Median :-0.2985   Median :-0.2237  
+##  Mean   : 0.0000   Mean   : 0.0000  
+##  3rd Qu.: 0.9818   3rd Qu.: 0.1700  
+##  Max.   : 1.5420   Max.   : 2.5339  
+## 
+</code></pre>
+
+<pre><code class="r">data.scale[is.na(data.scale)] &lt;- 0
+</code></pre>
+
+<p>#Section 3: Use of outlier detection algorithms</p>
+
+<p>The basic version of ABOD use all the other observations in the data to evaluate the outlierness of a certain observation. As a result, the computation can be very time-consuming. The approximated version of ABOD use a subset to evaluate the outlierness. Even though the speed performance can be improved, the results sometimes may not be that reliable. For this data set, the size is rather small. The basic version of ABOD is used for outlier detection. The raw scores of ABOD are transformed into probabilities using the outlier unification scheme, which is proposed by Kriegel, Kroger, Schubert, and Zimek in 2011. </p>
+
+<pre><code class="r">score.ABOD &lt;- Func.ABOD(data = data.scale, basic = T)
+score.trans.ABOD &lt;- Func.trans(raw.score = score.ABOD, method = &quot;ABOD&quot;)
+</code></pre>
+
+<p>The top 5 identified outliers are Stephen Curry, Dewayne Dedmon, Andrew Bogut, David Lee, and Klay Thompson. Except for Dewayne Dedmon, all the other 4 players are the starting lineups for Golden States Warriors during that season. Stephen Curry and Klay Thompson are selected as outliers due to their excellent scoring abilities and shooting skills. In addition, Curry has the highest assists rank in the team. Andrew Bogut is a defensive anchor, who contributes a lot to the rebounds and blocks. David Lee shows his importance on both end of the floors. He can scores, as well as rebounding. The other oultier is Dewayne Dedmon. This is reasonable as he only played 4 games for Warriors and his performance was not very impressive.</p>
+
+<pre><code class="r">GoldenStatesWarriors$Name[order(score.trans.ABOD, decreasing = T)[1:5]]
+</code></pre>
+
+<pre><code>## [1] &quot;Stephen Curry&quot;  &quot;Dewayne Dedmon&quot; &quot;Andrew Bogut&quot;   &quot;David Lee&quot;     
+## [5] &quot;Klay Thompson&quot;
+</code></pre>
+
+<pre><code class="r">GoldenStatesWarriors[order(score.trans.ABOD, decreasing = T)[1:5],]
+</code></pre>
+
+<pre><code>##              Name Age  G GS   MP  FG  FGA   FGP  3P 3PA   3PP  2P 2PA
+## 2   Stephen Curry  25 78 78 2846 652 1383 0.471 261 615 0.424 391 768
+## 18 Dewayne Dedmon  24  4  0    6   0    1 0.000   0   0    NA   0   1
+## 7    Andrew Bogut  29 67 67 1769 235  375 0.627   0   0    NA 235 375
+## 3       David Lee  30 69 67 2288 513  981 0.523   0   1 0.000 513 980
+## 1   Klay Thompson  23 81 81 2868 559 1259 0.444 223 535 0.417 336 724
+##      2PP  eFGP  FT FTA   FTP ORB DRB TRB AST STL BLK TOV  PF  PTS
+## 2  0.509 0.566 308 348 0.885  46 288 334 666 128  14 294 194 1873
+## 18 0.000 0.000   1   2 0.500   0   0   0   0   0   0   0   1    1
+## 7  0.627 0.627  22  64 0.344 182 489 671 112  47 121  97 210  492
+## 3  0.523 0.523 231 296 0.780 182 461 643 147  48  26 152 206 1257
+## 1  0.464 0.533 147 185 0.795  38 211 249 181  74  37 135 234 1488
+</code></pre>
+
+<p>Next, the SOD algorithm is used. Considering the data size, 5 will be reasonable to construct the reference set. k.nn is set as 10. Note that k.nn should be larger than k.sel. alpha is set as default, i.e., 0.8. This default is recommended by the authors of this algorithm.   </p>
+
+<p>The top 5 outliers revealed are quite similar to those identified by ABOD. The only difference is that instead of picking the bench player, the SOD algorithm chooses another important player in the Warrior team, Draymond Green. Even though Green was not very often chosen as the starting lineup, he has played even more minutes than the starting Bogut. His role is the 6th man in the team. During the 2013-2014 team, Green really came out strong. As a small forward, he contributed a lot to the defensive side, such as rebounding and blocking. In addition, he could also contribute to the offensive side. So to me, it is very reasonable to select Green as one of the outliers in the Warrior team.</p>
+
+<pre><code class="r">score.SOD &lt;- Func.SOD(data = data.scale, k.nn = 10, k.sel = 5, alpha = .8)
+score.trans.SOD &lt;- Func.trans(raw.score = score.SOD, method = &quot;SOD&quot;)
+
+GoldenStatesWarriors$Name[order(score.trans.SOD, decreasing = T)[1:5]]
+</code></pre>
+
+<pre><code>## [1] &quot;Stephen Curry&quot;  &quot;Andrew Bogut&quot;   &quot;David Lee&quot;      &quot;Draymond Green&quot;
+## [5] &quot;Klay Thompson&quot;
+</code></pre>
+
+<pre><code class="r">GoldenStatesWarriors[order(score.trans.SOD, decreasing = T)[1:5],]
+</code></pre>
+
+<pre><code>##             Name Age  G GS   MP  FG  FGA   FGP  3P 3PA   3PP  2P 2PA   2PP
+## 2  Stephen Curry  25 78 78 2846 652 1383 0.471 261 615 0.424 391 768 0.509
+## 7   Andrew Bogut  29 67 67 1769 235  375 0.627   0   0    NA 235 375 0.627
+## 3      David Lee  30 69 67 2288 513  981 0.523   0   1 0.000 513 980 0.523
+## 6 Draymond Green  23 82 12 1797 187  459 0.407  55 165 0.333 132 294 0.449
+## 1  Klay Thompson  23 81 81 2868 559 1259 0.444 223 535 0.417 336 724 0.464
+##    eFGP  FT FTA   FTP ORB DRB TRB AST STL BLK TOV  PF  PTS
+## 2 0.566 308 348 0.885  46 288 334 666 128  14 294 194 1873
+## 7 0.627  22  64 0.344 182 489 671 112  47 121  97 210  492
+## 3 0.523 231 296 0.780 182 461 643 147  48  26 152 206 1257
+## 6 0.467  82 123 0.667  86 323 409 152 102  72  91 231  511
+## 1 0.533 147 185 0.795  38 211 249 181  74  37 135 234 1488
+</code></pre>
+
+</body>
+
+</html>
